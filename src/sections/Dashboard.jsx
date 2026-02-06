@@ -23,9 +23,9 @@ export default function Dashboard() {
             {[
               { v: 'V1', label: 'Day 1', opacity: 0.3 },
               null,
-              { v: 'V10', label: 'Day 3', opacity: 0.6 },
+              { v: 'V19', label: 'Day 5', opacity: 0.5 },
               null,
-              { v: 'V19+', label: 'Day 5', opacity: 1, glow: true },
+              { v: 'V36', label: 'Day 7', opacity: 1, glow: true },
             ].map((item, i) => 
               item === null ? (
                 <div key={i} className="flex-shrink-0 w-8 h-px bg-[var(--color-border)]" />
@@ -144,9 +144,9 @@ export default function Dashboard() {
         <FadeIn delay={0.2}>
           <div className="mt-6 flex flex-wrap justify-center gap-10 md:gap-14 text-center">
             {[
-              { value: '19+', label: 'versions' },
-              { value: '3', label: 'AI agents' },
-              { value: '2hr', label: 'cycles' },
+              { value: '36+', label: 'versions' },
+              { value: '4', label: 'AI agents' },
+              { value: '2hr', label: 'build cycles' },
               { value: '0', label: 'CEO code' },
             ].map((stat, i) => (
               <div key={i}>

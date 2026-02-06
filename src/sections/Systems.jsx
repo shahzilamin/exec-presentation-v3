@@ -7,7 +7,7 @@ const systems = [
   {
     id: 'memory',
     label: 'MEMORY.md',
-    problem: 'Forgot everything',
+    problem: 'Forgot lessons learned',
     solution: 'Persistent across restarts',
     icon: '🧠',
     color: 'var(--color-apex)',
@@ -15,7 +15,7 @@ const systems = [
   {
     id: 'rules',
     label: 'RULES.md',
-    problem: 'Rules everywhere',
+    problem: 'Rules scattered in 5+ files',
     solution: 'One source of truth',
     icon: '📋',
     color: 'var(--color-sol)',
@@ -29,11 +29,11 @@ const systems = [
     color: 'var(--color-lux)',
   },
   {
-    id: 'propagation',
-    label: 'PROPAGATION_MAP.md',
-    problem: 'Data lost in transit',
-    solution: 'Who reads what',
-    icon: '🗺️',
+    id: 'autobot',
+    label: 'AUTOBOT.md',
+    problem: 'Agents work in silos',
+    solution: 'Multi-agent coordination',
+    icon: '🤖',
     color: 'var(--color-nova)',
   },
   {

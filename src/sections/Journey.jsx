@@ -28,14 +28,6 @@ const failures = [
     severity: 'high',
   },
   {
-    id: 'memory-not-config',
-    icon: '⚙️',
-    title: 'Documented ≠ Implemented',
-    date: 'Day 3',
-    lesson: 'Verify the actual config changed',
-    severity: 'medium',
-  },
-  {
     id: 'verify-before-answering',
     icon: '❓',
     title: 'Guessed Instead of Checking',
@@ -50,6 +42,30 @@ const failures = [
     date: 'Day 6',
     lesson: 'Errors = immediate action',
     severity: 'high',
+  },
+  {
+    id: 'skills-never-loaded',
+    icon: '📚',
+    title: 'Skills Never Loaded',
+    date: 'Day 7',
+    lesson: 'Verify what agents actually see',
+    severity: 'critical',
+  },
+  {
+    id: 'lazy-diagnostics',
+    icon: '🔍',
+    title: 'Lazy Diagnostics',
+    date: 'Day 8',
+    lesson: 'Investigate first, answer second',
+    severity: 'high',
+  },
+  {
+    id: 'file-sprawl',
+    icon: '🗂️',
+    title: '9 Duplications Found',
+    date: 'Day 7',
+    lesson: 'Fresh eyes catch what familiarity misses',
+    severity: 'medium',
   },
 ]
 
@@ -67,7 +83,7 @@ export default function Journey() {
 
         <FadeIn delay={0.1}>
           <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-3">
-            6 failures. <span className="text-[var(--color-text-muted)]">5 days.</span>
+            8 failures. <span className="text-[var(--color-text-muted)]">8 days.</span>
           </h2>
         </FadeIn>
 

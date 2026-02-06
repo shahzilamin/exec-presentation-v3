@@ -27,8 +27,8 @@ function CountUp({ value, suffix = '', prefix = '', duration = 2 }) {
 }
 
 const impacts = [
-  { metric: '$400-500', suffix: '/mo', label: 'GCP Savings', icon: '💰' },
-  { metric: '19', suffix: '+', label: 'Versions Shipped', icon: '🚀' },
+  { metric: '$400-500', suffix: '/mo', label: 'GCP Savings Found', icon: '💰' },
+  { metric: '36', suffix: '+', label: 'Versions Shipped', icon: '🚀' },
   { metric: '24/7', suffix: '', label: 'Autonomous Ops', icon: '👁️' },
   { metric: '0', suffix: '', label: 'Lines by CEO', icon: '⌨️' },
 ]
@@ -83,7 +83,7 @@ export default function Impact() {
                 transition={{ duration: 0.6, ease: [0.22, 0.61, 0.36, 1] }}
                 viewport={{ once: true }}
               >
-                5
+                8
               </motion.p>
               <p className="font-[family-name:var(--font-mono)] text-sm text-[var(--color-text-muted)] tracking-wider uppercase">days</p>
             </div>
@@ -91,8 +91,9 @@ export default function Impact() {
               {[
                 { icon: '☀️', text: 'Sol live', day: 'Day 1' },
                 { icon: '🔧', text: 'Systems built', day: 'Day 3' },
-                { icon: '⚡', text: 'Team deployed', day: 'Day 4' },
-                { icon: '💰', text: 'Saving money', day: 'Day 5' },
+                { icon: '⚡', text: 'Multi-agent team', day: 'Day 4' },
+                { icon: '💰', text: 'GCP audit complete', day: 'Day 5' },
+                { icon: '🧹', text: 'Full system audit', day: 'Day 7' },
               ].map((item, i) => (
                 <motion.div
                   key={i}

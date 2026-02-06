@@ -5,16 +5,16 @@ const nodes = [
   { id: 'memory', label: 'MEMORY.md', icon: '🧠', color: '#6366f1', x: 80, y: 100 },
   { id: 'active', label: 'ACTIVE.md', icon: '📌', color: '#ec4899', x: 420, y: 100 },
   { id: 'security', label: 'SECURITY.md', icon: '🔒', color: '#ef4444', x: 120, y: 210 },
-  { id: 'propagation', label: 'PROP_MAP.md', icon: '🗺️', color: '#10b981', x: 380, y: 210 },
+  { id: 'autobot', label: 'AUTOBOT.md', icon: '🤖', color: '#10b981', x: 380, y: 210 },
 ]
 
 const connections = [
   ['rules', 'memory'],
   ['rules', 'active'],
   ['rules', 'security'],
-  ['rules', 'propagation'],
-  ['memory', 'propagation'],
-  ['active', 'propagation'],
+  ['rules', 'autobot'],
+  ['memory', 'autobot'],
+  ['active', 'autobot'],
 ]
 
 export default function SystemDiagram() {

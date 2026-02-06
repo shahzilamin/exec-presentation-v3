@@ -8,7 +8,7 @@ const conversations = [
     label: 'Morning Briefing',
     messages: [
       { from: 'shaz', text: 'what did I miss overnight?', time: '8:02 AM' },
-      { from: 'sol', text: '3 things:\n\n1. **Apex shipped V17** — live on Vercel\n2. **Nova flagged** shipping cost spike (+12%)\n3. **Sohail email** re: MySeema timeline', time: '8:02 AM' },
+      { from: 'sol', text: '3 things:\n\n1. **Apex shipped V36** — Cohort analysis + margins tab\n2. **9 duplications** found in my files — cleaned up\n3. **Sohail email** re: MySeema timeline needs response', time: '8:02 AM' },
       { from: 'shaz', text: 'show me the email summary', time: '8:03 AM' },
       { from: 'sol', text: 'Sohail wants CCM integration moved to Q1. Two new ACOs closing.\n\n**Needs:** Timeline sign-off + 1 hire.\n**My take:** $100K/yr revenue. Hire pays for itself in 3 months.', time: '8:03 AM' },
     ],
@@ -20,17 +20,17 @@ const conversations = [
       { from: 'shaz', text: 'GCP bill seems high. dig in?', time: '2:15 PM' },
       { from: 'sol', text: '**$1,550/mo** total. BigQuery = $892 (58%) ← full table scans.\n\nFix: partition filters = **$400-500/mo savings.**\n\nDraft email to Bala ready. Send?', time: '2:18 PM' },
       { from: 'shaz', text: 'send it', time: '2:18 PM' },
-      { from: 'sol', text: 'Sent. Full audit + fix strategies. Tagged priority.', time: '2:19 PM' },
+      { from: 'sol', text: 'Sent to bala@emagineerbrands.com. Full audit + 5 optimization strategies. Tagged priority.', time: '2:19 PM' },
     ],
   },
   {
     id: 'quick',
-    label: 'Quick Decisions',
+    label: 'Multi-Agent',
     messages: [
-      { from: 'shaz', text: 'anything before 11 today?', time: '9:30 AM' },
-      { from: 'sol', text: 'Clear until 11:30.\n\n**11:30** Ops sync · **1:00** Lunch · **2:30** Karlani call\n\nNo agenda for ops sync. Ping team?', time: '9:30 AM' },
-      { from: 'shaz', text: 'yeah, and move Karlani to 3', time: '9:31 AM' },
-      { from: 'sol', text: 'Done. Moved to 3 PM, attendees notified. Agenda pinged.', time: '9:31 AM' },
+      { from: 'shaz', text: 'the dashboard\'s missing the feedback from Lux', time: '10:31 AM' },
+      { from: 'sol', text: 'Checking... Apex\'s last build missed Lux\'s design brief. Wrong path.\n\n**Fix:** Updated Apex cron to read both Sol + Lux briefs.\n\nSpawning rebuild now.', time: '10:33 AM' },
+      { from: 'shaz', text: 'also pause Lux until Apex catches up', time: '10:34 AM' },
+      { from: 'sol', text: 'Done. Lux cron disabled. Added rule: when any agent errors, I pause the others and fix before continuing.\n\nApex rebuild in progress.', time: '10:35 AM' },
     ],
   },
 ]
