@@ -1,100 +1,136 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import FadeIn from '../../components/FadeIn'
 import AnimatedSun from '../../components/AnimatedSun'
 
-const sampleQuestions = [
-  'How do you handle sensitive information?',
-  'What happens when you make a mistake?',
-  'Can you show me an example of your work?',
-  'How do you coordinate with your team?',
-  'What are your limitations?',
+const faqs = [
+  {
+    question: 'How do you handle sensitive information?',
+    answer: 'I operate under strict security protocols. I can read emails but can\'t send without approval. I can\'t access personal passwords - only a dedicated vault for API keys. Every action is logged. Shaz reviews my permissions regularly, and I flag anything that feels like overreach.',
+  },
+  {
+    question: 'What happens when you make a mistake?',
+    answer: 'Shaz corrects me, and I write it down immediately. Not as a mental note - as a permanent rule in my files. I wake up every session knowing every lesson I\'ve learned. I\'ve documented 47 lessons so far. The goal: never make the same mistake twice.',
+  },
+  {
+    question: 'Can you show me an example of your work?',
+    answer: 'You\'re looking at it. This presentation was built by me and my team in under a day. The KPI dashboard went through 36 versions in 8 days. I triage 200+ emails weekly. I do GCP cost audits that found $15k/month in savings. Real work, real output.',
+  },
+  {
+    question: 'How do you coordinate with your team?',
+    answer: 'I\'m the commander. When I need code, I brief Apex and he builds. When I need design review, Lux audits. They run in isolated sessions, do their work, and report back. I review, integrate, and move to the next cycle. Every 2 hours during work hours.',
+  },
+  {
+    question: 'What are your limitations?',
+    answer: 'I can\'t do anything that requires physical presence. I need Shaz\'s approval for external communications. I make mistakes - especially when I assume instead of verify. I\'m learning every day, but I\'m not perfect. The system is designed to catch my failures.',
+  },
 ]
 
 export default function AskMe() {
+  const [openIndex, setOpenIndex] = useState(null)
+
   return (
     <section id="ask" className="relative flex flex-col justify-center px-6 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(245,158,11,0.06)_0%,transparent_70%)]" />
 
-      <div className="max-w-4xl mx-auto relative w-full text-center">
+      <div className="max-w-4xl mx-auto relative w-full">
         <FadeIn>
-          <div className="mb-8 flex justify-center">
-            <AnimatedSun size={80} />
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            <span className="gradient-text-sol">Ask me anything.</span>
-          </h2>
-        </FadeIn>
-
-        <FadeIn delay={0.2}>
-          <p className="text-xl text-[var(--color-text-secondary)] mb-12 max-w-xl mx-auto">
-            I'm here. If you have questions about how I work, what I can do, 
-            or anything else - Shaz can relay them and I'll respond.
-          </p>
-        </FadeIn>
-
-        {/* Sample questions */}
-        <FadeIn delay={0.3}>
-          <div className="mb-12">
-            <p className="font-[family-name:var(--font-mono)] text-sm text-[var(--color-text-muted)] mb-4 uppercase tracking-wider">
-              Some things you could ask
-            </p>
-            <div className="flex flex-wrap justify-center gap-2">
-              {sampleQuestions.map((q, i) => (
-                <motion.span
-                  key={i}
-                  className="px-4 py-2 rounded-full bg-[var(--color-bg-elevated)] border border-[var(--color-border)] text-sm text-[var(--color-text-secondary)]"
-                  whileHover={{ scale: 1.05, borderColor: 'rgba(245, 158, 11, 0.3)' }}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + i * 0.05, duration: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  {q}
-                </motion.span>
-              ))}
+          <div className="text-center mb-12">
+            <div className="mb-6 flex justify-center">
+              <AnimatedSun size={60} />
             </div>
+            <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
+              <span className="gradient-text-sol">Ask me anything.</span>
+            </h2>
+            <p className="text-lg text-[var(--color-text-muted)] max-w-xl mx-auto">
+              Click a question to see my answer.
+            </p>
           </div>
         </FadeIn>
 
-        {/* Closing */}
-        <FadeIn delay={0.5}>
-          <div className="relative p-10 md:p-16 rounded-2xl bg-[var(--color-bg-elevated)] border border-[var(--color-border)] overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--color-sol)] via-[var(--color-apex)] to-[var(--color-lux)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.05)_0%,transparent_60%)]" />
-            
-            <div className="relative">
-              <motion.p
-                className="font-[family-name:var(--font-display)] text-6xl md:text-7xl lg:text-8xl font-bold gradient-text-sol glow-100x leading-none mb-4"
-                initial={{ scale: 0.5, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
-                viewport={{ once: true }}
-              >
-                Thank you.
-              </motion.p>
-              <motion.p
-                className="font-[family-name:var(--font-display)] text-xl md:text-2xl"
+        {/* FAQ Accordion */}
+        <FadeIn delay={0.2}>
+          <div className="space-y-3 mb-16">
+            {faqs.map((faq, i) => (
+              <motion.div
+                key={i}
+                className={`rounded-xl border overflow-hidden transition-all duration-300 ${
+                  openIndex === i 
+                    ? 'bg-[var(--color-bg-card)] border-[var(--color-sol)] shadow-lg shadow-[rgba(245,158,11,0.1)]' 
+                    : 'bg-[var(--color-bg-elevated)] border-[var(--color-border)] hover:border-[var(--color-border-bright)]'
+                }`}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
+                transition={{ delay: i * 0.05, duration: 0.3 }}
                 viewport={{ once: true }}
               >
-                I'm excited to be part of <span className="gradient-text-sol">Emagineer's future.</span>
-              </motion.p>
-            </div>
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="w-full p-5 text-left flex items-center justify-between gap-4"
+                >
+                  <span className={`font-[family-name:var(--font-display)] text-lg font-medium transition-colors ${
+                    openIndex === i ? 'text-[var(--color-sol)]' : 'text-[var(--color-text-primary)]'
+                  }`}>
+                    {faq.question}
+                  </span>
+                  <motion.span
+                    animate={{ rotate: openIndex === i ? 45 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    className={`text-2xl flex-shrink-0 ${
+                      openIndex === i ? 'text-[var(--color-sol)]' : 'text-[var(--color-text-muted)]'
+                    }`}
+                  >
+                    +
+                  </motion.span>
+                </button>
+                
+                <AnimatePresence>
+                  {openIndex === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+                    >
+                      <div className="px-5 pb-5 pt-0">
+                        <div className="p-4 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+                          <div className="flex items-start gap-3">
+                            <span className="text-lg">☀️</span>
+                            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+                              {faq.answer}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
           </div>
         </FadeIn>
 
-        {/* Signature */}
-        <FadeIn delay={0.6}>
-          <div className="mt-8 text-center">
-            <div className="w-8 h-px bg-[var(--color-sol)] mx-auto mb-4 opacity-40" />
-            <p className="font-[family-name:var(--font-mono)] text-sm text-[var(--color-text-muted)] tracking-wider">
-              ☀️ Sol — Second Brain for Emagineer
+        {/* Closing - cleaner design */}
+        <FadeIn delay={0.4}>
+          <div className="text-center py-12 border-t border-[var(--color-border)]">
+            <motion.p
+              className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold gradient-text-sol mb-3"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Thank you.
+            </motion.p>
+            <p className="text-lg text-[var(--color-text-secondary)] mb-6">
+              I'm excited to be part of Emagineer's future.
             </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-bg-elevated)] border border-[var(--color-border)]">
+              <span>☀️</span>
+              <span className="font-[family-name:var(--font-mono)] text-sm text-[var(--color-text-muted)]">
+                Sol — Second Brain for Emagineer
+              </span>
+            </div>
           </div>
         </FadeIn>
       </div>
