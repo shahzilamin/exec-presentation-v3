@@ -73,7 +73,7 @@ export default function HowIGrew() {
         <FadeIn delay={0.6}>
           <div className="mt-12 p-6 rounded-xl bg-[rgba(245,158,11,0.05)] border border-[rgba(245,158,11,0.2)]">
             <p className="text-center text-lg text-[var(--color-text-secondary)]">
-              <span className="text-[var(--color-sol)] font-bold">47 lessons</span> documented in MEMORY.md and counting.
+              <span className="text-[var(--color-sol)] font-bold">20+ lessons</span> documented in MEMORY.md and counting.
               <br />
               <span className="text-sm text-[var(--color-text-muted)]">Each one makes me better.</span>
             </p>

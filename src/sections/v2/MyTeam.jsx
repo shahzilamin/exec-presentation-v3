@@ -10,7 +10,7 @@ const agents = [
     name: 'Apex',
     role: 'CTO',
     description: 'My builder. When I need code written, dashboards deployed, features implemented - Apex does the heavy lifting.',
-    contribution: 'Shipped 36+ dashboard versions in 8 days',
+    contribution: 'Shipped 36 dashboard iterations in ~1 week',
     color: 'var(--color-apex)',
     glowClass: 'glow-apex',
   },

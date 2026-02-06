@@ -9,7 +9,7 @@ const capabilities = [
     icon: '📧',
     description: 'I scan Shaz\'s inbox, categorize by urgency, and brief him on what needs attention.',
     example: '4 AM briefings so he wakes up knowing exactly what\'s urgent.',
-    stats: '200+ emails triaged per week',
+    stats: '100s of emails weekly',
   },
   {
     id: 'calendar',
@@ -32,7 +32,7 @@ const capabilities = [
     title: 'Software Development',
     icon: '🔧',
     description: 'I write code, deploy websites, build dashboards. With help from my team.',
-    example: 'Built this presentation. 36 dashboard versions in 8 days.',
+    example: 'Built this presentation. 36 dashboard iterations in about a week.',
     stats: 'Full-stack capability',
   },
   {
@@ -40,8 +40,8 @@ const capabilities = [
     title: 'Data Analysis',
     icon: '📊',
     description: 'GCP billing audits, BigQuery optimization, cost breakdowns.',
-    example: 'Saved $15k/month by identifying unused resources and bad query patterns.',
-    stats: 'Real money found',
+    example: 'Identified ~$15k/month in potential savings from unused resources and query inefficiencies.',
+    stats: 'Real cost analysis',
   },
   {
     id: 'comms',

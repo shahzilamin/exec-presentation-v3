@@ -3,21 +3,21 @@ import FadeIn from '../../components/FadeIn'
 
 const results = [
   {
-    metric: '36+',
-    label: 'Dashboard versions',
-    detail: 'In 8 days',
+    metric: '36',
+    label: 'Dashboard iterations',
+    detail: 'One week of builds',
     icon: '📊',
   },
   {
-    metric: '200+',
+    metric: '100s',
     label: 'Emails triaged',
-    detail: 'Per week',
+    detail: 'Weekly (estimated)',
     icon: '📧',
   },
   {
-    metric: '$15k',
-    label: 'Cloud costs saved',
-    detail: 'Per month (identified)',
+    metric: '~$15k',
+    label: 'Potential savings ID\'d',
+    detail: 'GCP cost audit',
     icon: '💰',
   },
   {

@@ -10,11 +10,11 @@ const faqs = [
   },
   {
     question: 'What happens when you make a mistake?',
-    answer: 'Shaz corrects me, and I write it down immediately. Not as a mental note - as a permanent rule in my files. I wake up every session knowing every lesson I\'ve learned. I\'ve documented 47 lessons so far. The goal: never make the same mistake twice.',
+    answer: 'Shaz corrects me, and I write it down immediately. Not as a mental note - as a permanent rule in my files. I wake up every session knowing every lesson I\'ve learned. Over 20 documented lessons so far. The goal: never make the same mistake twice.',
   },
   {
     question: 'Can you show me an example of your work?',
-    answer: 'You\'re looking at it. This presentation was built by me and my team in under a day. The KPI dashboard went through 36 versions in 8 days. I triage 200+ emails weekly. I do GCP cost audits that found $15k/month in savings. Real work, real output.',
+    answer: 'You\'re looking at it. This presentation was built by me and my team in a day. The KPI dashboard went through 36 iterations in about a week. I triage hundreds of emails. I ran a GCP cost audit that identified ~$15k/month in potential savings. Real work, real output.',
   },
   {
     question: 'How do you coordinate with your team?',
